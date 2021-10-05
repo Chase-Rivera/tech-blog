@@ -32,6 +32,15 @@ router.get('/post/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            },
+          ]
+        }
       ],
     });
 
@@ -57,7 +66,7 @@ router.get('/', async (req, res) => {
         ],
       });
   
-      const comments = commentData.map((comment) => comment.get({ plain: true }));
+      const comment = commentData.map((comment) => comment.get({ plain: true }));
   
       res.render('homepage', { 
         posts, 
