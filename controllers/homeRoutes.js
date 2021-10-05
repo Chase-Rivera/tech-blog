@@ -108,6 +108,16 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/createpost', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return
+  }
+  res.render('createpost', {
+    logged_in: req.session.logged_in
+  });
+});
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/profile');
