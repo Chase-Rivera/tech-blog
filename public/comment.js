@@ -1,7 +1,7 @@
 const newComment = async (event) => {
     event.preventDefault();
 
-    const comment = document.querySelector('#newComment').nodeValue.trim();
+    const comment = document.querySelector('#newComment').value.trim();
     const post_id = document.querySelector('.postdisplay').getAttribute('post-id');
 
     if (comment && post-id) {
