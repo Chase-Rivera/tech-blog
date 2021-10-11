@@ -1,0 +1,53 @@
+<nav class="navbar navbar-dark bg-light">
+    <div class="container">
+        <span class="navbar h1"><strong>Tech Blog</strong></span>
+    </div>
+</nav>
+<div class="my-3 d-grid gap-6">
+    <div class="card shadow mx-auto" style="width: 70%;">
+        <ul class="nav nav-tabs" id="userTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Log In</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Sign-Up</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="usertabContent">
+            <div class="tab" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <form class="form login-form d-grid gap-5">
+                    <div class="form-group d-flex justify-content-between">
+                        <label for="email-login">Email:</label>
+                        <input class="form-input" type="text" id="email-login"/>
+                    </div>
+                    <div class="form-group d-flex justify-content-between">
+                        <label for="email-login">Password:</label>
+                        <input class="form-input" type="password" id="password-login"/>
+                    </div>
+                    <div class="form-group mx-auto">
+                        <button class="btn btn-primary" type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+            <form class="form signup-form d-grid gap-5">
+                    <div class="form-group d-flex justify-content-between">
+                        <label for="username-signup">Username:</label>
+                        <input class="form-input" type="text" id="username-signup"/>
+                    </div>
+                    <div class="form-group d-flex justify-content-between">
+                        <label for="email-signup">Email:</label>
+                        <input class="form-input" type="text" id="email-signup"/>
+                    </div>
+                    <div class="form-group d-flex justify-content-between">
+                        <label for="password-signup">Password:</label>
+                        <input class="form-input" type="password" id="password-signup"/>
+                    </div>
+                    <div class="form-group mx-auto">
+                        <button class="btn btn-primary" type="submit">Sign Up</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <script src="/public/login.js"></script>
