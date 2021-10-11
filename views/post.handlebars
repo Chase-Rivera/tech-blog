@@ -1,0 +1,52 @@
+<nav class="navbar navbar-dark bg-light">
+    <div class="container">
+        <span class="navbar h1"><strong>Tech Blog</strong></span>
+    </div>
+</nav>
+
+<div class="my-6 d-grid gap-3">
+    <div class="card shadow mx-auto" style="width: 70%;">
+        <div class="card-header jusify-content-between">
+            <div class="h4 text-primary"><strong>{{name}}</strong></div>
+            <div>Post created by {{user.name}} on {{format_date_created}}</div>
+        </div>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{content}}</p>
+    </div>
+</div>
+<div class="d-grid gap-4">
+    {{#each comments as |comment|}}
+    <div class="card shadow mx-auto" style="width 65%;">
+        <div class="card-header d-flex justify-content-between">
+            <div>Comment</div>
+            <div>Posted by {{comment.user.name}} on {{format_date comment.date_created}}</div>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{comment.comment}}</p>
+        </div>
+    </div>
+    {{/each}}
+    {{#if logged_in}}
+    <div class="card shadow mx-auto" style="width 65%;">
+        <div class="card-header">
+            <div><strong>New Comment</strong></div>
+        </div>
+        <div class="card-body">
+            <form class="form new-comment-form d-grid gap-2 mx-auto">
+                <div>
+                    <textarea class="form-control" id="newComment" rows="4"></textarea>
+                </div>
+                <div class="mx-auto">
+                    <button class="btn btn-primary" type="submit">Post Comment</button>
+                </div>
+            </form>
+        </div>
+        {{/if}}
+    </div>
+</div>
+{{#if logged_in}}
+<script src="/public/comment.js"></script>
+{{/if}}
+    
+    
