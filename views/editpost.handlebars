@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-light">
+    <div class="container">
+        <span class="navbar h1"><strong>Tech Blog</strong></span>
+    </div>
+</nav>
+
+<div class="my-6 d-grid gap-3">
+    <div class="card shadow mx-auto" style="width: 70%;">
+        <div class="card-header">
+            <div><strong>Edit your post</strong></div>
+        </div>
+        <div class="card-body">
+            <form class="form edit-post-form d-grid gap-3 mx-auto" post-id={{id}}>
+                <div>
+                    <textarea class="form-control" id="editPostName" rows="1">{{title}}</textarea>
+                </div>
+                <div>
+                    <textarea class="form-control" id="editPostContent" rows="4">{{content}}</textarea>
+                </div>
+                <div class="d-flex justify-content-center d-grid gap-6">
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-cloud-upload-fill"></i>Update this Post</button>
+                    <button class="btn btn-primary" id="dltPostBtn"><i class="bi bi-trash"></i>Delete this Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{#if logged_in}}
+<script src="/public/editpost.js"></script>
+{{/if}}
+    
