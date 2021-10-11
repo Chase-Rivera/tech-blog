@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-light">
+    <div class="container">
+        <span class="navbar h1"><strong>Tech Blog</strong></span>
+    </div>
+</nav>
+<div class="my-3 d-grid gap-6">
+    {{#each posts as |post| }}
+    <div class="card shadow mx-auto" style="width: 70%;">
+        <div class="card-header jusify-content-between">
+            <a href="/post/{{post.id}}" class="h4"><strong>{{post.title}}</strong></a>
+            <div>Post Created by {{post.user.name}} on {{format_date post.date_created}}</div>
+        </div>
+    <div class="card-body">
+        <p class="card-text">{{post.content}}</p>
+    </div>
+    </div>
+    {{/each}}
+</div>
