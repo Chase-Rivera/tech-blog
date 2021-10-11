@@ -1,0 +1,28 @@
+<nav class="navbar navbar-dark bg-light">
+    <div class="container">
+        <span class="navbar h1"><strong>Dashboard</strong></span>
+    </div>
+</nav>
+<div class="my-3 d-grid gap-6">
+    <div class="card shadow mx-auto" style="width: 70%;">
+        <div class="card-header">
+            <div><strong>New Post</strong></div>
+        </div>
+        <div class="card-body">
+            <form class="form new-post-form d-grid gap-5">
+                <div>
+                    <input class="form-control" type="text" id="newPostName" placeholder="New Post"/>
+                </div>
+                <div>
+                    <textarea class="form-control" id="newPostContent" rows="4" placeholder="Write your new post here!"></textarea>
+                </div>
+                <div class="mx-auto">
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-plus-lg"></i>Add New Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{#if logged_in}}
+<script src="/public/newpost.js"></script>
+{{/if}}
