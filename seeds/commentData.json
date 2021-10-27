@@ -1,18 +1,18 @@
 [
     {
-        "comment": "comment 1",
+        "name": "comment 1",
         "post_id": "1"
     },
     {
-        "comment": "comment 2",
+        "name": "comment 2",
         "post_id": "1"
     },
     {
-        "comment": "comment 3",
+        "name": "comment 3",
         "post_id": "1"
     },
     {
-        "comment": "comment 4",
+        "name": "comment 4",
         "post_id": "1"
     }
 ]

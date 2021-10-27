@@ -1,18 +1,18 @@
 [
     {
-        "title": "First post",
+        "name": "First post",
         "content": "first post content"
     },
     {
-        "title": "Second post",
+        "name": "Second post",
         "content": "second post content"
     },
     {
-        "title": "Third post",
+        "name": "Third post",
         "content": "third post conent"
     },
     {
-        "title": "Fourth post",
+        "name": "Fourth post",
         "content": "fourth post conent"
     }
 ]
