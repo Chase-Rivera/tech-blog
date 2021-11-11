@@ -55,27 +55,20 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
-    try {
-      const commentData = await Comment.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ['name'],
-          },
-        ],
-      });
-  
-      const comment = commentData.map((comment) => comment.get({ plain: true }));
-  
-      res.render('homepage', { 
-        posts, 
-        logged_in: req.session.logged_in 
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+router.get('/posteditor/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+    
+    const post = postData.get({ plain: true });
+
+    res.render('posteditor', {
+      ...post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
   router.get('/comment/:id', async (req, res) => {
     try {
