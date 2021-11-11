@@ -1,9 +1,9 @@
-const editPost = async (event) => {
+const editPostHandler = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('#editPost').value.trim();
     const content = document.querySelector('#editPostContent').value.trim();
-    const Post_id = document.querySelector('.editPost').getAttribute('post-id');
+    const post_id = document.querySelector('.editPost').getAttribute('post-id');
     if (name && content) {
         const response = await fetch(`/api/posts/${post_id}`, {
             method: 'PUT',
@@ -20,7 +20,7 @@ const editPost = async (event) => {
     }
 };
 
-const deletePost = async (event) => {
+const deletePostHandler = async (event) => {
     event.preventDefault();
 
     const post_id = document.querySelector('.editPost').getAttribute('post-id');
@@ -38,8 +38,8 @@ const deletePost = async (event) => {
 
 document
     .querySelector('.edit-post')
-    .addEventListener('submit', editPost);
+    .addEventListener('submit', editPostHandler);
 
 document
     .querySelector('.delete-post')
-    .addEventListener('submit', deletePost);
+    .addEventListener('submit', deletePostHandler);

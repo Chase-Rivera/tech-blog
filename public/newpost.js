@@ -1,4 +1,4 @@
-const newPost = async (event) => {
+const newPostHandler = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('#newPost').value.trim();
@@ -21,4 +21,4 @@ const newPost = async (event) => {
 
 document
     .querySelector('.new-post')
-    .addEventListener('submit', newPost);
+    .addEventListener('submit', newPostHandler);
