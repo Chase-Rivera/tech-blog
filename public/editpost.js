@@ -13,7 +13,7 @@ const editPost = async (event) => {
             },
         });
         if (response.ok) {
-            document.location.replace(`/post`);
+            document.location.replace(`/dashboard`);
         } else {
             alert('Unable to edit post');
         }
@@ -23,7 +23,7 @@ const editPost = async (event) => {
 const deletePost = async (event) => {
     event.preventDefault();
 
-    const Post_id = document.querySelector('.editPost').getAttribute('post-id');
+    const post_id = document.querySelector('.editPost').getAttribute('post-id');
     if (post_id) {
         const response = await fetch(`/api/posts/${post_id}`, {
             method: 'DELETE',
