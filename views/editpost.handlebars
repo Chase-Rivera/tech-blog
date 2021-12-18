@@ -12,20 +12,19 @@
         <div class="card-body">
             <form class="form edit-post-form d-grid gap-3 mx-auto" post-id={{id}}>
                 <div>
-                    <textarea class="form-control" id="editPostName" rows="1">{{name}}</textarea>
+                    <textarea class="form-control" id="editPost" rows="1">{{name}}</textarea>
                 </div>
                 <div>
-                    <textarea class="form-control" id="editPostContent" rows="4">{{content}}</textarea>
+                    <textarea class="form-control" id="editPostDesc" rows="4">{{description}}</textarea>
                 </div>
                 <div class="d-flex justify-content-center d-grid gap-6">
                     <button class="btn btn-primary" type="submit"><i class="bi bi-cloud-upload-fill"></i>Update this Post</button>
-                    <button class="btn btn-primary" id="dltPostBtn"><i class="bi bi-trash"></i>Delete this Post</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-{{#if logged_in}}
-<script src="/public/editpost.js"></script>
-{{/if}}
+
+<script src="/editpost.js"></script>
+
     

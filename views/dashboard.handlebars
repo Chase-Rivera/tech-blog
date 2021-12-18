@@ -8,11 +8,19 @@
     {{#each posts as |post| }}
     <div class="card shadow mx-auto" style="width: 70%;">
         <div class="card-header jusify-content-between">
-            <a href="/posteditor/{{post.id}}" class="h4"><strong>{{post.name}}</strong></a>
+            <a href="/post/{{post.id}}" class="h4"><strong>{{post.name}}</strong></a>
             <div>Post Created by {{post.user.name}} on {{format_date post.date_created}}</div>
+            
+            <a href="/post/{{post.id}}"> <button class="btn btn-primary" type="submit"><i class="bi bi-cloud-upload-fill"></i>Update this
+                Post</button></a>
+            <button class="btn btn-primary" id="dltPostBtn"><i class="bi bi-trash" post-id={{post.id}}></i>Delete this Post</button>
+          
         </div>
+
+    </div>
     {{/each}}
     <div class="mx-auto">
         <a class="btn btn-primary" href="/newpost"><i class="bi bi-plus-lg"></i>Add a New Post</a>
     </div>
 </div>
+<script src="/delete.js"></script>

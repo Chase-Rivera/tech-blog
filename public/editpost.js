@@ -1,16 +1,16 @@
-const editPostHandler = async (event) => {
+const editPostHandle = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('#editPost').value.trim();
-    const content = document.querySelector('#editPostContent').value.trim();
-    const post_id = document.querySelector('.editPost').getAttribute('post-id');
-    if (name && content) {
-        const response = await fetch(`/api/posts/${post_id}`, {
+    const  description= document.querySelector('#editPostDesc').value.trim();
+    const post_id = document.querySelector('.edit-post-form').getAttribute('post-id');
+    if (name && description) {
+        const response = await fetch(`/api/post/${post_id}`, {
             method: 'PUT',
-            body: JSON.stringify({ name, content}),
+            body: JSON.stringify({ name, description}),
             headers: {
                 'Content-type': 'application/json',
-            },
+            }
         });
         if (response.ok) {
             document.location.replace(`/dashboard`);
@@ -20,26 +20,12 @@ const editPostHandler = async (event) => {
     }
 };
 
-const deletePostHandler = async (event) => {
-    event.preventDefault();
 
-    const post_id = document.querySelector('.editPost').getAttribute('post-id');
-    if (post_id) {
-        const response = await fetch(`/api/posts/${post_id}`, {
-            method: 'DELETE',
-        });
-        if (response.ok) {
-            document.location.replace(`/post`);
-        } else {
-            alert('Unable to delete post');
-        }
-    }
-};
 
 document
-    .querySelector('.edit-post')
-    .addEventListener('submit', editPostHandler);
+    .querySelector('.edit-post-form')
+    .addEventListener('submit', editPostHandle);
 
-document
-    .querySelector('.delete-post')
-    .addEventListener('submit', deletePostHandler);
+/*
+
+*/

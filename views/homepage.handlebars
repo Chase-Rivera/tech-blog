@@ -7,7 +7,7 @@
     {{#each posts as |post| }}
     <div class="card shadow mx-auto" style="width: 70%;">
         <div class="card-header jusify-content-between">
-            <a href="/post/{{post.id}}" class="h4"><strong>{{post.name}}</strong></a>
+            <h6 href="/post/{{post.id}}" class="h4"><strong>{{post.name}}</strong></h6>
             <div>Post Created by {{post.user.name}} on {{format_date post.date_created}}</div>
         </div>
     <div class="card-body">

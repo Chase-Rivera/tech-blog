@@ -46,7 +46,7 @@ router.get('/post/:id', async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('post', {
+    res.render('editpost', {
       ...post,
       logged_in: req.session.logged_in
     });
@@ -55,20 +55,20 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-router.get('/posteditor/:id', async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id);
+// router.get('/posteditor/:id', async (req, res) => {
+//   try {
+//     const postData = await Post.findByPk(req.params.id);
     
-    const post = postData.get({ plain: true });
+//     const post = postData.get({ plain: true });
 
-    res.render('posteditor', {
-      ...post,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('posteditor', {
+//       ...post,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
   router.get('/comment/:id', async (req, res) => {
     try {
@@ -100,9 +100,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    
+    
+    
+const posts = {
+  ...user,
+ 
+}
+console.log(posts);
     res.render('dashboard', {
-      ...user,
+      ...posts,
       logged_in: true
     });
   } catch (err) {
@@ -110,12 +117,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-router.get('/createpost', (req, res) => {
+router.get('/newpost', (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
     return
   }
-  res.render('createpost', {
+  res.render('newpost', {
     logged_in: req.session.logged_in
   });
 });
