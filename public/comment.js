@@ -5,12 +5,7 @@ const newCommentHandler = async (event) => {
     const post_id = document.querySelector('.comment-form').getAttribute('post-id');
   
 
-    fetch("/api/comment")
-    .then(response => response.json)
-    .then((data) => {
-        console.log(data);
-        // commentDiv = document.querySelector.
-    })
+  
 
     if (body && post_id) {
         const response = await fetch(`/api/comment`, {
@@ -32,4 +27,4 @@ document
     .querySelector('.comment-form')
     .addEventListener('submit', newCommentHandler);
 
-    const homepage_post_id = document.querySelector('#homepage_post_id').getAttribute('data-post-id');
+    

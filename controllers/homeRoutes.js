@@ -133,6 +133,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/editComment/:id', withAuth, async (req, res) => {
+  
+
+    res.render('editcomment')
+});
+
 
 
 

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -7,6 +7,12 @@ router.get('/', withAuth, async (req, res) => {
   try {
    
     const allComment = await Comment.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        }
+      ]
     });
 
     res.status(200).json(allComment);
@@ -30,6 +36,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req,res) => {
+  console.log(req.body);
   try{
     const commentData = await Comment.update(req.body, {
       where: {
