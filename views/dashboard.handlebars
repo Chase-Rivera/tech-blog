@@ -1,19 +1,20 @@
 <nav class="navbar navbar-dark bg-light">
     <div class="container">
-        <span class="navbar h1"><strong>Dashboard</strong></span>
+        <span class="navbar h1"><strong>{{name}}'s Dashboard</strong></span>
     </div>
 </nav>
 
 <div class="my-6 d-grid gap-3">
+    
     {{#each posts as |post| }}
     <div class="card shadow mx-auto" style="width: 70%;">
         <div class="card-header jusify-content-between">
             <a href="/post/{{post.id}}" class="h4"><strong>{{post.name}}</strong></a>
-            <div>Post Created by {{post.user.name}} on {{format_date post.date_created}}</div>
+            <div>Post Created at {{format_date post.date_created}}</div>
             
-            <a href="/post/{{post.id}}"> <button class="btn btn-primary" type="submit"><i class="bi bi-cloud-upload-fill"></i>Update this
-                Post</button></a>
-            <button class="btn btn-primary" id="dltPostBtn"><i class="bi bi-trash" post-id={{post.id}}></i>Delete this Post</button>
+            <a href="/post/{{post.id}}"> <button class="btn btn-primary" type="submit" post-id={{post.id}} >
+                <i class="bi bi-cloud-upload-fill"></i>Update this Post</button></a>
+            <button class="btn btn-primary" id="dltPostBtn" post-id={{post.id}} ><i class="bi bi-trash"></i>Delete this Post</button>
           
         </div>
 
